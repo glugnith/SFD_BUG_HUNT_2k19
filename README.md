@@ -16,13 +16,13 @@ Make a **zip file** of all your solutions (CPP codes) and upload your file at
 
 Exciting Prizes await you. 
 
-## Marking Scheme:
+## Marking Scheme
 - Each bug is worth 10 points.
 - There is a lollipop bug in each program for 30 points.
 - If all the bugs are resolved then 20 extra choco points are given.
 - Points-tie between candidates will be dealt with on first come first serve basis.  
 
-## Rules:
+## Rules
 - Multiple submissions will lead to disqualification.
 -  Please submit compiled cpp files only.
 
