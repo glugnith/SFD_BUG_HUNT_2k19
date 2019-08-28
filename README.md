@@ -34,3 +34,9 @@ Shivam Sood (94183-84371)
 
 Shivam Kapila (97360-66176)
 
+
+*Get the latest News about Web Development, Open Source, Tooling, Server & Security*
+
+[![Facebook](https://github.frapsoft.com/social/facebook.png)](https://www.facebook.com/glug.nith/)
+[![Github](https://github.frapsoft.com/social/github.png)](https://github.com/glugnith/)
+
