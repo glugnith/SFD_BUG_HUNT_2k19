@@ -9,7 +9,7 @@ This year we are conducting BUG HUNT 2k19 an event exclusively for sophomores to
 Competition will start on (FRIDAY) 30-Aug-2019 at 10:00 PM and close on (SATURDAY) 31-Aug-2019 at 10:00 PM.
 
 Make a **zip file** of all your solutions (CPP codes) and upload your file at
-## [Google Form link](https://forms.gle/YBoGFRfuZKWQQy5z6)
+**[Google Form link](https://forms.gle/YBoGFRfuZKWQQy5z6)**
 
 Exciting Prizes await you. 
 
