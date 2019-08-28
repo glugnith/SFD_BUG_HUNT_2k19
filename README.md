@@ -1,4 +1,4 @@
-# SFD_BUG_HUNT_2k19
+# SFD BUG HUNT 2k19
 
 **GLUG NITH** is back with its yearly buzz **SOFTWARE FREEDOM DAY 2019**. 
 This year we are conducting BUG HUNT 2k19 an event exclusively for sophomores to promote the Free and Open Source Software.
@@ -27,7 +27,6 @@ Exciting Prizes await you.
 
 For any queries contact: 
 
-Shivam Sood
-
-94183-84371
+Shivam Sood (94183-84371)
+Shivam Kapila (97360-66176)
 
