@@ -26,7 +26,7 @@ Exciting Prizes await you.
 - Multiple submissions will lead to disqualification.
 -  Please submit compiled cpp files only.
 
- Hunt the bugs up
+ * *Hunt the bugs up* *
 
 For any queries contact: 
 
