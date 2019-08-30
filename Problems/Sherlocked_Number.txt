@@ -1,0 +1,66 @@
+Question:  Moriarty created a massive mind palace mystery for Sherlock.Sherlock used his wits and tried to find the way out.Eventually John received a call from Mycroft who told him that the escape is masked to a random number only.Be the Molly Hopper to Sherlock and help him find the "SHERLOCKED" number.
+
+Code:
+ 
+#include<iostream.h>
+#include<stdlib.h>
+using namespace std;
+/*
+This program plays a simple game.
+*/
+const int totchan=7;
+void main()
+{
+ int number;        
+ int guess;         
+ int chances=0,score=0,chanscor;        
+ char ans;
+ do
+ { system("clear");
+   chances=score=0;
+   cout<<"Welcome to the High/Low game. 
+   \n\nI will pick a random number from 0 to 100. \n";
+   cout<<"You must try to guess the number. \n";
+   srand(time());
+   number=(int)(rand()%100);
+   chanscor=100/totchan;      
+   do
+   {
+     cout<<"\nWhat is your guess? (0 to 100):";
+     cin>>guess;
+     if((guess<0)||(guess>100))
+     {
+	cout<<"Sorry, but your guess "<<guess<<"must be from 0 to 100.";
+     }
+     else if(guess < number)
+     {
+	cout<<guess<<"
+   is low.Try a higher number.\n";
+     }
+     else if(guess > number)
+     {
+	cout<<guess<<" is high.Try a lower number.\n";
+     }
+     else		
+     {			
+	cout<<guess<<" is correct. \nCongratulations! ";
+	score=chanscor*(totchan-chances);  
+  calculatescore();
+  cout<<"Your score is "<<score<<endl;
+        break;
+     }
+     chances++;
+     if(guess!=number)
+	 cout<<"Now you have "<<totchan-chances<<" chances left.\n";
+     if(chances==totchan)
+	 { cout<<"Only "<<totchan<<" chances are allowed.Better luck next time.\n\n";
+	   cout<<"The actual number was "<<number<<endl;
+	   break;
+	 }
+     }while (guess!=number);
+     cout<<"\n\n\nThank you for playing High/Low! \n";
+     cout<<"Want to play it again? (y/n):";
+     checkanswer();
+     cin>>ans;
+   }while(ans=='y' || ans=='Y');
+ }

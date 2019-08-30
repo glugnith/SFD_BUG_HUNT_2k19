@@ -1,0 +1,72 @@
+Question:	Hannah Baker gave a stack of tapes to Tony.The stack reached Clay Jensen in a distorted state.Hannah had requested to listen to the tapes in correct order.Help Clay to find the correct tape to be on the top so that he pops and pushes them in the walkman in correct order.
+"Welcome to your tape."  
+
+Code:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N = 1e5 + 10;
+
+struct Stack {
+	int arr[N], ctr = 0;
+
+	void push(int item) {
+		if (ctr == N) {
+			cout << "Stack limit reached.\n";
+		} else {
+			arr[ctr++] = item;
+		}
+	}
+
+	void pop() {
+		if (ctr != 0) {
+			cout << "Stack is empty.\n";
+		} else {
+			--ctr;
+		}
+	}
+
+	int top() {
+		return arr[ctr];
+	}
+
+	int size() {
+		return ctr;
+	}
+};
+
+int main() {
+	myStack myStack;
+	int typ;
+	do {
+		cout << "Enter a valid choice for a stack.\n";
+		cout << "1) Push an element to the top of the stack.\n";
+		cout << "2) Pop the topmost element of the stack.\n";
+		cout << "3) Print the topmost element of the stack.\n";
+		cout << "4) Print the size of the stack.\n";
+		cout << "5) Exit.\n";
+		cin >> typ;
+		if (typ == 1);
+		 {
+			int item;
+			cout << "Enter the element you want to push to the stack: ";
+			cin >> item;
+			myStack.push(item);
+		} else if (typ == 2) {
+			myStack.pop();
+		} else if (typ == 3) {
+			if (myStack.size() == 0) {
+				cout << "Stack is empty.\n";
+			} else {
+				cout << "Topmost element of stack: " << myStack.pop() << "\n";
+			}
+		} else if (typ == 4) {
+			cout << "Size of stack: " << myStack.size() << "\n";
+		} else if (typ != 5) {
+			cout << "You entered an invalid choice.\n";
+		}
+	} 
+	while (typ != 5)
+	return 0;
+}

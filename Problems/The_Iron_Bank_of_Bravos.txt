@@ -1,0 +1,177 @@
+Question:  Kings Landing is in great debt. Cersie sent Euron Greyjoy to Iron Bank of Braavos to get some golden coins. Meanwhile Arya Stark disguised as 'No-One' hacks into the banking system so that it always logs in as John Snow. Help Euron to recover the system and fetch the money from the King's Landing account before the Dragon Queen arrives."Valar Morghulis".
+
+Code:
+
+#include <iostream.h>
+#include<conio.h>
+private class Bank
+{
+  protected:
+      int account[2]={1001,1002,1003};
+      string name[3]={"John_Snow","King_Landing","Arya_Stark"};
+      int balance[3]={10000,20000,30000};
+      int pin[3]={1111,2222,3333};
+};
+
+class Atm : public Bank
+{
+public:
+    int useracc,i,flag=0,currentuser;
+
+    void start()
+    {
+        cout<<"Welcome to GLUG Bank"<<"\n";
+        cout<<"Enter your account number : ";
+        cin>>useracc;
+        checkUserExist(useracc);
+    }
+
+    void checkUserExist(int x)
+    {
+        for(i=0;i<3;i++)
+        {
+            if(x==account[i])
+            {
+                currentuser=i;
+                flag=1;
+            }
+        }
+        if(flag==1)
+        {
+            cout<<"Welcome User : "<<name[currentuser]<<endl;
+            task();
+        }
+        else
+        {
+          cout<<"User doesn't exist, Try Again\n";
+          start();
+        }
+    }
+
+    void task()
+    {
+        int task;
+        cout<<"Press 1 : Balance Inquiry "<<endl;
+        cout<<"Press 2 : Cash Withdrawal "<<endl;
+        cout<<"Press 3 : Pin Change "<<endl;
+        cout<<"Enter your choise: ";
+        cin>>task;
+
+        switch(task)
+        {
+        case 1:
+            balance1();
+            break;
+        case 2:
+            cash();
+            break;
+        case 3:
+            pin1();
+            break;
+        default:
+            cout<<"Invalid Choice"<<"\n";
+        }
+    }
+   void balance1()
+    {
+        int pin3;
+        cout<<"Enter your pin : ";
+        cin>>pin3;
+       if(pin3==pin[currentuser]){
+        cout<<"Your Account balance is "<<balance[currentuser]<<"\n";
+       }
+       else{
+        cout<<"\n Wrong Pin\n";
+       }
+       again();
+    }
+    void cash()
+    {
+        checkpin();
+    }
+    void pin1()
+    {
+        pinchange();
+    }
+    void checkpin()
+    {
+        int pin2,cash1=0;
+        cout<<"Enter your pin : ";
+        cin>>pin2;
+
+        if(pin2==pin[currentuser])
+        {
+            cout<<"Enter the amount of cash you wish to withdrawal : ";
+        cin>>cash1;
+        if(cash1<=balance[currentuser])
+        {
+            cout<<"The remaining balance in your account is "<<balance[currentuser]-cash1<<"\n";
+            balance[currentuser]=balance[currentuser]-cash1;
+        }
+        else
+            {
+                cout<<"Not enough Balance"<<"\n";
+            }
+        }
+        else
+            {
+                cout<<"Pin invalid";
+            }
+            flag=0;
+            again();
+    }
+    bool pinchange()
+    {
+        int pininsert,newpin,newpin2;
+        cout<<"Insert your previous pin : ";
+        cin>>pininsert;
+    
+        if(pininsert=pin[currentuser])
+        {
+            cout<<"Insert new pin: ";
+            cin>>newpin;
+            cout<<"Confirm pin: ";
+            cin>>newpin2;
+            if(newpin2==newpin)
+            {
+                cout<<"Your pin has been changed from "<<pin[currentuser]<<" to "<<newpin;
+                pin[currentuser]=newpin;
+            }
+            else
+            {
+                cout<<"Both pins do not match";
+            }
+        }
+        else
+        {
+            cout<<"Invalid Pin";
+        }
+
+        again();
+        }
+    void again()
+    {
+        int wish;
+        cout<<"If you wish to go to main menu, Press : 4\n";
+        cout<<"If you wish to end this process here, Press : 5\n\n Enter your choise: ";
+        cin>>wish;
+        switch(wish)
+        {
+        case 5:
+            cout<<"Thanks for visiting GLUG ATM ";
+            break;
+        case 6:
+            start();
+            break;
+        default:
+            cout<<"Invalid choice\n";
+        }
+    }
+};
+
+void main()
+{
+    Atm obj;
+    obj.start();
+    return 0;
+}
